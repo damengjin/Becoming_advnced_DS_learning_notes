@@ -8,17 +8,16 @@ document.addEventListener('DOMContentLoaded', function() {
             e.preventDefault();
             
             // Load note content
-            if (link.getAttribute('href').startsWith('#note')) {
-                fetch('notes/' + link.getAttribute('href').substring(1) + '.html')
-                    .then(response => response.text())
-                    .then(data => {
-                        contentDiv.innerHTML = data;
-                        // Optionally load detailed content here
-                        detailsDiv.innerHTML = "<p>Detailed content for " + link.textContent + "</p>";
-                    })
-                    .catch(error => console.error('Error loading content:', error));
-            }
+            fetch('notes/' + link.getAttribute('href').substring(1) + '.html')
+                .then(response => response.text())
+                .then(data => {
+                    contentDiv.innerHTML = data;
+                    // Optionally load detailed content here
+                    detailsDiv.innerHTML = "<p>Detailed content for " + link.textContent + "</p>";
+                })
+                .catch(error => console.error('Error loading content:', error));
         });
     });
 });
+
 
