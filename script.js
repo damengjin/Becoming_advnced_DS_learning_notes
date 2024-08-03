@@ -1,24 +1,16 @@
-document.addEventListener("DOMContentLoaded", function() {
-    const notes = document.querySelectorAll(".note");
-    const detailContent = document.getElementById("detail-content");
+document.addEventListener('DOMContentLoaded', function() {
+    const navLinks = document.querySelectorAll('.sidebar a');
+    const contentDiv = document.getElementById('content');
 
-    function updateDetails() {
-        let noteInView;
-        for (let note of notes) {
-            const rect = note.getBoundingClientRect();
-            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
-                noteInView = note;
-                break;
-            }
-        }
-
-        if (noteInView) {
-            detailContent.innerHTML = `
-                <h2>${noteInView.querySelector("h2").innerText}</h2>
-                <p>Details for ${noteInView.querySelector("h2").innerText}</p>
-            `;
-        }
-    }
-
-    document.querySelector(".middle-column").addEventListener("scroll", updateDetails);
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            fetch(link.getAttribute('href'))
+                .then(response => response.text())
+                .then(data => {
+                    contentDiv.innerHTML = data;
+                })
+                .catch(error => console.error('Error loading content:', error));
+        });
+    });
 });

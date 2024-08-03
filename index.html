@@ -3,39 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Study Notes</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Your Website Title</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Website Title</h1>
+    </header>
+    
     <div class="container">
-        <div class="left-column">
-            <ul>
-                <li><a href="#note1">Note 1</a></li>
-                <li><a href="#note2">Note 2</a></li>
-                <li><a href="#note3">Note 3</a></li>
-                <!-- Add more notes as needed -->
-            </ul>
-        </div>
-        <div class="middle-column">
-            <div id="note1" class="note">
-                <h2>Note 1</h2>
-                <p>This is the content of note 1.</p>
-            </div>
-            <div id="note2" class="note">
-                <h2>Note 2</h2>
-                <p>This is the content of note 2.</p>
-            </div>
-            <div id="note3" class="note">
-                <h2>Note 3</h2>
-                <p>This is the content of note 3.</p>
-            </div>
-            <!-- Add more notes as needed -->
-        </div>
-        <div class="right-column" id="detail-content">
-            <h2>Detailed Content</h2>
-            <p>Details will appear here as you scroll through the notes.</p>
-        </div>
+        <aside class="sidebar">
+            <nav>
+                <ul id="nav-list">
+                    <li><a href="pages/page1.html">Page 1</a></li>
+                    <li><a href="pages/page2.html">Page 2</a></li>
+                    <li><a href="pages/page3.html">Page 3</a></li>
+                    <!-- Add more links as needed -->
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="content" id="content">
+            <!-- Content will be dynamically loaded here -->
+        </main>
     </div>
-    <script src="script.js"></script>
+    
+    <footer>
+        <p>Contact information | Copyright &copy; Your Name</p>
+    </footer>
+    
+    <script src="scripts.js"></script>
 </body>
 </html>
