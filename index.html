@@ -7,40 +7,49 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <header>
+        <h1>Data Science Learning Notes</h1>
+    </header>
     <div class="container">
-        <div class="left-column">
-            <div class="navigator">
-                <ul id="nav-list">
-                    <li><a href="#chapter1">Chapter 1</a></li>
-                    <li><a href="#chapter2">Chapter 2</a></li>
-                    <li><a href="#chapter3">Chapter 3</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="middle-column" id="content">
-            <div id="chapter1">
-                <h1>Chapter 1: Introduction</h1>
-                <p>This is the content for chapter 1.</p>
+        <nav class="left-column">
+            <ul id="nav-list">
+                <li><a href="#section1">Introduction</a></li>
+                <li><a href="#section2">Data Analysis</a></li>
+                <li><a href="#section3">Machine Learning</a></li>
+            </ul>
+        </nav>
+        <main class="middle-column" id="content">
+            <section id="section1">
+                <h2>Introduction</h2>
+                <p>This is the introduction section.</p>
                 <!-- Add images and markdown formulas here -->
-            </div>
-            <div id="chapter2">
-                <h1>Chapter 2: Data Analysis</h1>
-                <p>This is the content for chapter 2.</p>
+            </section>
+            <section id="section2">
+                <h2>Data Analysis</h2>
+                <p>This section covers data analysis.</p>
                 <!-- Add images and markdown formulas here -->
-            </div>
-            <div id="chapter3">
-                <h1>Chapter 3: Machine Learning</h1>
-                <p>This is the content for chapter 3.</p>
+            </section>
+            <section id="section3">
+                <h2>Machine Learning</h2>
+                <p>This section discusses machine learning.</p>
                 <!-- Add images and markdown formulas here -->
+            </section>
+        </main>
+        <aside class="right-column" id="keywords">
+            <h2>Keywords</h2>
+            <ul id="keyword-list">
+                <!-- Keywords will be dynamically updated here -->
+            </ul>
+            <div id="progress">
+                <h3>Reading Progress</h3>
+                <progress id="progress-bar" value="0" max="100"></progress>
             </div>
-        </div>
-        <div class="right-column" id="keywords">
-            <!-- Keywords and reading progress will be dynamically updated here -->
-        </div>
+        </aside>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
 
 
 
