@@ -1,0 +1,39 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.left-column {
+    width: 20%;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.left-column ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.left-column li {
+    margin: 10px 0;
+}
+
+.middle-column {
+    width: 50%;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.right-column {
+    width: 30%;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+
+.note {
+    margin-bottom: 50px;
+}
