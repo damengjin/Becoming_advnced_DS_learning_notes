@@ -1,23 +1,29 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.sidebar a');
-    const contentDiv = document.getElementById('content');
-    const detailsDiv = document.getElementById('details-content');
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.left-column a');
+    const keywords = document.getElementById('keywords');
     
+    // Example keywords
+    const keywordData = {
+        chapter1: ['Introduction', 'Overview'],
+        chapter2: ['Analysis', 'Statistics'],
+        chapter3: ['Machine Learning', 'Algorithms']
+    };
+
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // Load note content
-            fetch('notes/' + link.getAttribute('href').substring(1) + '.html')
-                .then(response => response.text())
-                .then(data => {
-                    contentDiv.innerHTML = data;
-                    // Optionally load detailed content here
-                    detailsDiv.innerHTML = "<p>Detailed content for " + link.textContent + "</p>";
-                })
-                .catch(error => console.error('Error loading content:', error));
+        link.addEventListener('click', () => {
+            const chapterId = link.getAttribute('href').substring(1);
+            updateKeywords(chapterId);
         });
     });
+
+    function updateKeywords(chapterId) {
+        keywords.innerHTML = '<h2>Keywords:</h2><ul>';
+        keywordData[chapterId].forEach(keyword => {
+            keywords.innerHTML += `<li>${keyword}</li>`;
+        });
+        keywords.innerHTML += '</ul>';
+    }
 });
+
 
 
