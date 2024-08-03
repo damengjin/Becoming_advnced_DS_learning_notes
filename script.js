@@ -10,11 +10,23 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
             const chapterId = link.getAttribute('href').substring(1);
+            updateContent(chapterId);
             updateKeywords(chapterId);
         });
     });
+
+    function updateContent(chapterId) {
+        const chapterElement = document.getElementById(chapterId);
+        if (chapterElement) {
+            document.querySelector('.middle-column').scrollTo({
+                top: chapterElement.offsetTop,
+                behavior: 'smooth'
+            });
+        }
+    }
 
     function updateKeywords(chapterId) {
         keywords.innerHTML = '<h2>Keywords:</h2><ul>';
@@ -24,6 +36,3 @@ document.addEventListener('DOMContentLoaded', () => {
         keywords.innerHTML += '</ul>';
     }
 });
-
-
-
